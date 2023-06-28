@@ -40,6 +40,8 @@ int main() {
     sockaddr_in clientAddress{};
     int clientAddressSize = sizeof(clientAddress);
 
+    std::cout << "Waiting for a client..." << std::endl;
+
     SOCKET clientSocket = accept(serverSocket, reinterpret_cast<sockaddr*>(&clientAddress), &clientAddressSize);
     if (clientSocket == INVALID_SOCKET) {
         std::cerr << "Falha ao aceitar conexão." << std::endl;
